@@ -26,10 +26,11 @@ function submitClick(e) {
 	e.preventDefault();
 
 	var projectID = $("#project").val();
-	var width = $("#width").val();
 	var replaceDescription = $("#description").val();
 
-	$(projectID).css("width", width);
+	$(projectID).animate({
+		width: $("#width").val()
+	}, 700);
 	var containingProject = $("a.thumbnail").closest(".project"); 
 	var description = $(containingProject).find(".project-description");
 	if (description.length > 0) {
